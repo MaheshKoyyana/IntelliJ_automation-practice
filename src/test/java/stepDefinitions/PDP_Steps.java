@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertFalse;
 
 public class PDP_Steps extends Base_PO {
-    private WebDriver driver = getDriver();;
+    private WebDriver driver = getDriver();
 
 
     @Given("I open new PDP for a chair product")
@@ -44,6 +44,7 @@ public class PDP_Steps extends Base_PO {
         WebElement button= driver.findElement(By.cssSelector("[class*='EnsembleItem'] [class='MuiSvgIcon-root add-to-cart is-cart']"));
         System.out.println(button);
         button.click();
+        System.out.println(button);
 
 
 
