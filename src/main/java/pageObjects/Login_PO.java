@@ -1,0 +1,47 @@
+package pageObjects;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import utils.Global_Vars;
+
+public class Login_PO extends Base_PO{
+    private @FindBy(id="text")
+    WebElement username_TextField;
+
+    private @FindBy(id="password")
+    WebElement password_TextField;
+
+    private @FindBy(id="login-button")
+    WebElement loginButton;
+
+    public Login_PO()
+    {
+        super();
+    }
+
+    public void navigateTo_WebDriverUniversity_Login_Page()
+    {
+        navigateTo_URL(Global_Vars.WEBDRIVER_UNIVERSITY_HOMEPAGE_URL+"/Login-Portal/index.html");
+    }
+
+    public void setUsername_TextField(String username)
+    {
+        sendKeys(username_TextField, username);
+    }
+    public void setPassword_TextField(String password)
+    {
+        sendKeys(password_TextField,password);
+    }
+    public void clickOn_Login_Button()
+    {
+        waitForWebElementAndClick(loginButton);
+    }
+    public void validate_SuccessfullLogin_Message()
+    {
+        waitForAlert_And_ValidateText("validation succeeded");
+    }
+    public void validate_UnsuccessfullLogin_Message()
+    {
+        waitForAlert_And_ValidateText("validation failed");
+    }
+}
