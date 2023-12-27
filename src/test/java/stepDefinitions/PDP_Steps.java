@@ -10,12 +10,12 @@ import pageObjects.Base_PO;
 
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertFalse;
 
 public class PDP_Steps extends Base_PO {
-    private WebDriver driver = getDriver();
+    private final WebDriver driver = getDriver();
 
 
     @Given("I open new PDP for a chair product")
@@ -23,7 +23,7 @@ public class PDP_Steps extends Base_PO {
         //driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         // Write code here that turns the phrase above into concrete actions
         navigateTo_URL("https://city:city@pp.cityfurniture.com/product/9721403/gianna-white-micro-left-chaise-sectional");
-       driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
+      // driver.manage().timeouts().pageLoadTimeout(200, TimeUnit.SECONDS);
         System.out.println("Title:"+driver.getTitle());
         System.out.println("Url:"+driver.getCurrentUrl());
         System.out.println(driver.getTitle().contains(driver.getCurrentUrl()));
@@ -45,9 +45,7 @@ public class PDP_Steps extends Base_PO {
         System.out.println(button);
         button.click();
         System.out.println(button);
-
-
-
+        //Added this line for testing commit 2
 
     }
 }
