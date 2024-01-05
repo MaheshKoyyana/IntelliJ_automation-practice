@@ -1,3 +1,5 @@
+Feature: WebDriver University - Login Page
+
 @login2
 Scenario: Validate Successful Login
 When I enter a username webdriver
