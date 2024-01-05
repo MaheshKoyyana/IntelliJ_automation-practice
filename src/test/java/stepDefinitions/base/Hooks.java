@@ -13,7 +13,11 @@ import static driver.DriverFactory.cleanupDriver;
 import static driver.DriverFactory.getDriver;
 
 public class Hooks {
-
+    public Hooks()
+    {
+        System.out.println("Hooks class is called\n");
+        System.out.println("This code block is executed");
+    }
     @Before
     public void setup()
     {
