@@ -1,9 +1,6 @@
 package stepDefinitions.base;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
+import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -15,13 +12,24 @@ import static driver.DriverFactory.getDriver;
 public class Hooks {
     public Hooks()
     {
-        System.out.println("Hooks class is called\n");
-        System.out.println("This code block is executed");
+        System.out.println("Hooks class is called");
+        System.out.println("Hooks constructor code block is executed");
     }
-    @Before
-    public void setup()
+
+    @BeforeAll
+    public static void beforeAll()
     {
+        System.out.println("Before All method is called");
+    }
+
+    @Before
+    public void setup(Scenario scenario)
+    {
+        System.out.println("Before method is called");
+        System.out.println(scenario.getId()+"\n"+scenario.getName()+"\n"+scenario.getSourceTagNames());
         getDriver();
+
+
     }
     @AfterStep
     public void captureExceptionImage(Scenario scenario)

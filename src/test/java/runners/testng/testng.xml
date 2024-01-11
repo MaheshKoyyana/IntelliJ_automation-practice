@@ -4,7 +4,7 @@
 <suite name="Suite" parallel="classes" data-provider-thread-count="1">
     <test name="Regression">
         <classes>
-          <class name="runners.MainRunner"></class>
+          <class name="runners.TestRunner"></class>
         </classes>
     </test>
 </suite>
